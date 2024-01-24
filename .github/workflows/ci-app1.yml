@@ -23,7 +23,7 @@ jobs:
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
-        working-directory: ./app2
+        working-directory: ./app1
 
       - name: Build with Vite
         run: yarn build
