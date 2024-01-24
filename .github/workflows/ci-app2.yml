@@ -23,8 +23,8 @@ jobs:
 
       - name: Install dependencies
         run: yarn install
-        working-directory: ./app2
+        working-directory: ./git-test/app2
 
       - name: Build with Vite
         run: yarn build
-        working-directory: ./app2
+        working-directory: ./git-test/app2
