@@ -11,6 +11,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      APP_PATH: ./app1
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -20,12 +22,12 @@ jobs:
         with:
           node-version: 18
           cache: 'yarn'
-          cache-dependency-path: ./app1/yarn.lock
+          cache-dependency-path: ${{ env.APP_PATH }}/yarn.lock
 
       - name: Install dependencies
         run: yarn install
-        working-directory: ./app1
+        working-directory: ${{ env.APP_PATH }}
 
       - name: Build with Vite
         run: yarn build
-        working-directory: ./app1
+        working-directory: ${{ env.APP_PATH }}
