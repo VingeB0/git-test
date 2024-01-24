@@ -20,12 +20,12 @@ jobs:
         with:
           node-version: 18
           cache: 'yarn'
-          cache-dependency-path: ./git-test/app1/yarn.lock
+          cache-dependency-path: ./app1/yarn.lock
 
       - name: Install dependencies
         run: yarn install
-        working-directory: ./git-test/app1
+        working-directory: ./app1
 
       - name: Build with Vite
         run: yarn build
-        working-directory: ./git-test/app1
+        working-directory: ./app1
